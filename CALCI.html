@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MY CALCULATOR</title>
+	<style type="text/css">
+		input{
+			width: 70%;
+			height: 8%;
+			border: solid 2px red;
+		}
+		button{
+			background-color: black;
+			border: dotted 3px red;
+			color: white;
+			height: 50px;
+			width: 50px;
+			padding-bottom: 2px;
+			font-style: dotted;
+		}			
+	</style>
+	<script type="text/javascript">
+		var n1;
+		var n2;
+		var result;
+		var op;
+		function opplus(){
+			op="+";
+			n1=parseInt(document.cal.textbox.value);
+			document.cal.textbox.value="";
+		}
+		function opsub(){
+			op="-";
+			n1=parseInt(document.cal.textbox.value);
+			document.cal.textbox.value="";
+		}
+		function opmul(){
+			op="*";
+			n1=parseInt(document.cal.textbox.value);
+			document.cal.textbox.value="";
+		}
+		function opdiv(){
+			op="/";
+			n1=parseInt(document.cal.textbox.value);
+			document.cal.textbox.value="";
+		}
+		function equalto(){
+			n2=parseInt(document.cal.textbox.value)
+			if(op == "+"){
+				result=n1 + n2;
+			}
+			if(op == "-"){
+				result=n1 - n2;
+			}
+			if(op == "*"){
+				result=n1 * n2;
+			}
+			if(op == "/"){
+				if(n2==0){
+					document.cal.textbox.value="0";
+				}
+				else
+				{
+				result=n1 / n2;
+			}
+			}
+			document.cal.textbox.value="";
+		document.cal.textbox.value=result.toString();
+		
+		return;
+		}
+
+	</script>	
+
+</head>
+<body>
+<center>
+	<form name="cal" style="border:ridge 4px green; width: 400px ; height: 400px;padding-top: 80px;background-color:yellow">
+		
+		<center>MY CALCULATOR</center>
+
+		<input type="text" name="textbox" id="textbox" ><br/><br/>
+
+
+		<table>
+			
+			<tr>
+				<td><button type="button" onclick="cal.textbox.value+='1'">1</button></td>
+				<td><button type="button" onclick="cal.textbox.value+='2'">2</button></td>
+				<td><button type="button" onclick="cal.textbox.value+='3'">3</button></td>
+				<td><button type="button" onclick="opsub()">-</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" onclick="cal.textbox.value+='4'">4</button></td>
+				<td><button type="button" onclick="cal.textbox.value+='5'">5</button></td>
+				<td><button type="button" onclick="cal.textbox.value+='6'">6</button></td>
+				<td><button type="button" onclick="opmul()">*</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" onclick="cal.textbox.value+='7'">7</button></td>
+				<td><button type="button" onclick="cal.textbox.value+='8'">8</button></td>
+				<td><button  type="button" onclick="cal.textbox.value+='9'">9</button></td>
+				<td><button type="button" onclick="opdiv()">/</button></td>
+			</tr>
+			<tr>
+				<td><button>c</button></td>
+				<td><button type="button" onclick="cal.textbox.value+='0'">0</button></td>
+				<td><button type="button" onclick="equalto()">=</button></td>
+				<td><button type="button" onclick="opplus()">+</button></td>	
+			</tr>
+		</table>
+		
+	</form>
+</center>
+</body>
+</html>
